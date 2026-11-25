@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catatan</title>
+  <meta name="description" content="Aplikasi contoh starter: catatan yang tersimpan di browser, dengan ekspor dan impor JSON.">
+  <meta name="theme-color" content="#0f6657">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6657'/%3E%3Cpath d='M10 9h12M10 16h12M10 23h7' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke isi</a>
+
+  <!-- GANTI: nama aplikasi dan kalimat pendek tentang kasusmu -->
+  <header class="app-header">
+    <div class="wrap header-inner">
+      <span class="app-mark" aria-hidden="true"></span>
+      <div>
+        <h1 class="app-title">Catatan</h1>
+        <p class="app-lead">Aplikasi contoh. Data tersimpan di browser ini.</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap layout">
+    <!-- FORMULIR: tambah dan ubah data -->
+    <section class="panel area-form" aria-labelledby="form-title">
+      <h2 id="form-title" class="panel-title">Tulis catatan</h2>
+      <form id="note-form" class="form" novalidate>
+        <div class="field">
+          <label for="note-title">Judul</label>
+          <input id="note-title" name="title" type="text" maxlength="80" required
+                 autocomplete="off" aria-describedby="title-error">
+          <p id="title-error" class="field-error" hidden>Judul wajib diisi.</p>
+        </div>
+        <div class="field">
+          <label for="note-body">Isi <span class="optional">(boleh kosong)</span></label>
+          <textarea id="note-body" name="body" rows="4" maxlength="500"></textarea>
+        </div>
+        <div class="form-actions">
+          <button id="submit-btn" class="btn btn-primary" type="submit">Simpan catatan</button>
+          <button id="cancel-btn" class="btn btn-secondary" type="button" hidden>Batal ubah</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- DAFTAR: hasil render dari state -->
+    <section class="panel area-list" aria-labelledby="list-title">
+      <div class="panel-head">
+        <h2 id="list-title" class="panel-title" tabindex="-1">Daftar catatan</h2>
+        <span id="note-count" class="count"></span>
+      </div>
+      <ul id="note-list" class="note-list"></ul>
+      <p id="empty-state" class="empty" hidden>Belum ada catatan. Tulis yang pertama lewat formulir.</p>
+    </section>
+
+    <!-- DATA: cadangan dan pemulihan -->
+    <section class="panel area-data" aria-labelledby="data-title">
+      <h2 id="data-title" class="panel-title">Cadangan data</h2>
+      <p class="panel-note">Ekspor untuk menyimpan salinan. Impor mengganti semua data dengan isi file.</p>
+      <div class="data-actions">
+        <button id="export-btn" class="btn btn-secondary" type="button">Ekspor JSON</button>
+        <button id="import-btn" class="btn btn-secondary" type="button">Impor JSON</button>
+      </div>
+      <button id="reset-btn" class="btn btn-link data-reset" type="button">Kembalikan data contoh</button>
+      <input id="import-file" type="file" accept=".json,application/json" aria-label="Pilih file JSON untuk diimpor" hidden>
+    </section>
+  </main>
+
+  <footer class="wrap app-footer">
+    <p>Starter proyek Computational Thinking. Ganti aplikasi contoh ini dengan aplikasi kasusmu.</p>
+  </footer>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <!-- Urutan penting: storage.js dulu, baru app.js yang memakainya -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

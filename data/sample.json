@@ -1,0 +1,23 @@
+{
+  "app": "catatan-demo",
+  "version": 1,
+  "data": {
+    "catatan": [
+      {
+        "id": "contoh-1",
+        "title": "Data tersimpan di browser",
+        "body": "Catatan ini disimpan di localStorage. Coba ubah atau hapus, lalu muat ulang halaman. Perubahannya tetap ada."
+      },
+      {
+        "id": "contoh-2",
+        "title": "Cadangkan dengan Ekspor JSON",
+        "body": "Tombol Ekspor JSON mengunduh semua data menjadi satu file. File itu bisa dimasukkan lagi lewat Impor JSON, misalnya di HP lain."
+      },
+      {
+        "id": "contoh-3",
+        "title": "Ganti aplikasi contoh ini",
+        "body": "Buka js/app.js. Bagian bertanda FITUR KAMU adalah tempat fitur wajib kasusmu dibangun."
+      }
+    ]
+  }
+}
